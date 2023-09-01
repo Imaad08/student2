@@ -1,4 +1,4 @@
----
+<!-- ---
 toc: true
 comments: true
 layout: post
@@ -6,7 +6,7 @@ title: Prunned Tool Procedure ...
 description: Example hacks!!! This shows procedures performed by student, not the procedures for the entire class.  Modified or prunned for specific machine.
 courses: { compsci: {week: 0} }
 type: hacks
----
+--- -->
 
 ## Hacks
 > Complete the procedure below accurately.  These are absolutely required and must be 100% accurate for your success.

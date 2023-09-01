@@ -4,7 +4,7 @@ comments: true
 layout: post
 title: Game of Life
 description: Game of Life
-type: tangibles
+type: hacks
 courses: { compsci: {week: 2} }
 ---
 
@@ -21,7 +21,7 @@ courses: { compsci: {week: 2} }
     display: inline-flex;
     justify-content: space-between;
     gap: 20px;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-bottom: 10px;
   }
 
@@ -45,7 +45,6 @@ courses: { compsci: {week: 2} }
 
 <div class="container">
   <header class="pb-3 mb-4 border-bottom border-primary text-dark">
-    <span class="fs-4">Remix of Game of Life</span>
   </header>
   <!-- Buttons that link to functions in JavaScript -->
   <div class="buttons">
@@ -202,15 +201,15 @@ const startbtn = document.getElementById("start-btn");
 function togglePause() {
     paused = !paused;
     if(paused) {
-    startbtn.innerHTML = "resume"
+    startbtn.innerHTML = "Resume"
     } else {
-    startbtn.innerHTML = "pause";
+    startbtn.innerHTML = "Pause";
     }
 }
 
 // Used to start the animation
 function start() {
-    startbtn.innerHTML = "pause";
+    startbtn.innerHTML = "Pause";
     startbtn.onclick = togglePause;
 
     // setInterval will call the function within it ever 100ms

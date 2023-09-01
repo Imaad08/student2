@@ -1,14 +1,63 @@
-<header class="site-header">
 
-  <div id="header">
-    <nav>
-      <ul>
-        <li class="fork"><a href="{{site.baseurl}}/">Home</a></li>
-        <li class="fork"><a href="{{site.baseurl}}/compsci">CompSci</a></li>
-        <li class="fork"><a href="{{site.baseurl}}/blogs">Blogs</a></li>
-        <li class="title"><a href="{{site.baseurl}}/help">Help</a></li>
-        <li class="title"><a href="{{ site.github.repository_url }}#readme">View On GitHub</a></li>
-      </ul>
-    </nav>
-  </div><!-- end header -->
-</header>
+<head>
+  <style>
+
+    #header nav {
+      width: 100%;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .fork {
+      margin-bottom: 10px;
+    }
+
+    .fork a, .title a {
+      display: block;
+      padding: 15px 10px;
+      color: white;
+      border-radius: 5px;
+      border: 1px solid #2c3e50; 
+      margin-bottom: 10px; 
+      border-color: #2c3e50; 
+      font-size: 14px;
+      font-weight: normal;
+      background-color: #2c3e50;
+    }
+
+    .fork a:hover, .title a:hover {
+      background-color: #3498db;; 
+      
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div id="header">
+      <nav>
+        <ul>
+          <li class="fork">
+            <a href="{{site.baseurl}}/">Home</a>
+          </li>
+          <li class="fork">
+            <a href="{{site.baseurl}}/compsci">CompSci</a>
+          </li>
+          <li class="fork">
+            <a href="{{site.baseurl}}/blogs">Blogs</a>
+          </li>
+          <li class="title">
+            <a href="{{site.baseurl}}/help">Help</a>
+          </li>
+          <li class="title">
+            <a href="{{ site.github.repository_url }}#readme">View On GitHub</a>
+          </li>
+        </ul>
+      </nav>
+    </div><!-- end header -->
+  </header>
+</body>
+
