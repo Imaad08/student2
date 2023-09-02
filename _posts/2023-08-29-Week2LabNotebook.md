@@ -8,3 +8,8 @@ courses: {'compsci': {'week': 2}}
 type: tangibles
 ---
 
+# Week 2 Lab Notebook
+
+---
+
+## 

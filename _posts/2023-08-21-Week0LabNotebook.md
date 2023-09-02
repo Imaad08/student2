@@ -17,10 +17,10 @@ type: tangibles
 While creating the Who am I? page, I was trying to put as much information about be as I could so that people reading my page could get to know me better.
 
 ## Problems:
-- I had some trouble creating the table that displayed my classes because I wasn't 100% sure how to make it.
+> • I had some trouble creating the table that displayed my classes because I wasn't 100% sure how to make it.
 
 ## Solution:
-- After reading slack announcements, I saw that Mr. Mortensen had sent out an announcement that showed us how to create the tables. I used this information to create the table that is not on my home page.
+> • After reading slack announcements, I saw that Mr. Mortensen had sent out an announcement that showed us how to create the tables. I used this information to create the table that is not on my home page.
 
 ## Skills used/learned:
-- I learned the HTML language a little better because I understood how different lines could be made to make a table using just a few lines of code
+> • I learned the HTML language a little better because I understood how different lines could be made to make a table using just a few lines of code
