@@ -2,7 +2,7 @@
 toc: true
 comments: true
 layout: post
-title: Unity Game
+title: Unity Game Embed
 description: My game I created using Unity 2D.
 type: hacks
 courses: { compsci: {week: 1} }
