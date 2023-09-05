@@ -72,6 +72,7 @@ For this project, me and Tanay decided to collaborate on one big Python project 
 
 ### Solutions:
 > • We learned that 6000 was an optimal number of simulations for both accuracy and cost on computers
+
 ### Skills used/learned:
 > • We used the `Pandas ` module to express the data of stock prices which was pulled
 >
