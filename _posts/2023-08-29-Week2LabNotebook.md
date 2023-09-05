@@ -66,9 +66,12 @@ Using the source code for the snake game, I was able to add a playable and fully
 For this project, me and Tanay decided to collaborate on one big Python project that would allow us to pull and display stock data in a table using the `pandas ` module and `Stooq ` database. We also worked on a project to show this data on a graph but as of right now it does not fully work.
 
 ### Problems:
+> • We wanted to use as many simulations as possible so we moved the number to around 15,000 simulations
+>
+> • The code kept timing out and couldn't fully execute the code but we found out our computers couldn't handle that many since they started lagging and heating up
 
 ### Solutions:
-
+> • We learned that 6000 was an optimal number of simulations for both accuracy and cost on computers
 ### Skills used/learned:
 > • We used the `Pandas ` module to express the data of stock prices which was pulled
 >
