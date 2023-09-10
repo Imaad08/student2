@@ -2,7 +2,7 @@
 layout: post
 title: Week 3 Lab Notebook
 description: Lab notebook covering week 3
-comments: True
+comments: false
 categories: ['5.A', 'C4.1']
 courses: {'compsci': {'week': 3}}
 type: tangibles
