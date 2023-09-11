@@ -74,91 +74,105 @@ type: hacks
   </div>
 
   <script>
-    const player = document.getElementById('player');
-    const scoreDisplay = document.getElementById('score');
-    const startButton = document.getElementById('start-button');
-    const pauseButton = document.getElementById('pause-button');
-    const restartButton = document.getElementById('restart-button');
-    const gameContainer = document.getElementById('game-container');
-    let score = 0;
-    let gameInterval;
-    let gameRunning = false;
+// Get references to HTML elements using their IDs
+const player = document.getElementById('player');
+const scoreDisplay = document.getElementById('score');
+const startButton = document.getElementById('start-button');
+const pauseButton = document.getElementById('pause-button');
+const restartButton = document.getElementById('restart-button');
+const gameContainer = document.getElementById('game-container');
 
-    function movePlayer(event) {
-      const x = event.clientX - player.clientWidth / 2;
-      const maxX = gameContainer.clientWidth - player.clientWidth;
-      player.style.left = `${Math.min(maxX, Math.max(0, x))}px`;
-    }
+// Initialize game variables
+let score = 0;
+let gameInterval;
+let gameRunning = false;
 
-    function createObject() {
-      if (gameRunning) {
-        const object = document.createElement('div');
-        object.classList.add('object');
-        object.style.left = `${Math.random() * (gameContainer.clientWidth - 20)}px`;
-        gameContainer.appendChild(object);
+// Function to move the player based on mouse position
+function movePlayer(event) {
+  const x = event.clientX - player.clientWidth / 2;
+  const maxX = gameContainer.clientWidth - player.clientWidth;
+  player.style.left = `${Math.min(maxX, Math.max(0, x))}px`;
+}
 
-        function fall() {
-          const y = parseInt(object.style.top) || 0;
-          object.style.top = `${y + 5}px`;
+// Function to create falling objects
+function createObject() {
+  if (gameRunning) {
+    const object = document.createElement('div');
+    object.classList.add('object');
+    object.style.left = `${Math.random() * (gameContainer.clientWidth - 20)}px`;
+    gameContainer.appendChild(object);
 
-          if (y > gameContainer.clientHeight) {
-            object.remove();
-          } else {
-            requestAnimationFrame(fall);
+    // Function to make objects fall and handle collisions
+    function fall() {
+      const y = parseInt(object.style.top) || 0;
+      object.style.top = `${y + 5}px`;
 
-            const playerRect = player.getBoundingClientRect();
-            const objectRect = object.getBoundingClientRect();
-
-            if (
-              playerRect.left < objectRect.right &&
-              playerRect.right > objectRect.left &&
-              playerRect.top < objectRect.bottom &&
-              playerRect.bottom > objectRect.top
-            ) {
-              object.remove();
-              score++;
-              scoreDisplay.textContent = `Score: ${score}`;
-            }
-          }
-        }
-
+      if (y > gameContainer.clientHeight) {
+        object.remove();
+      } else {
         requestAnimationFrame(fall);
+
+        const playerRect = player.getBoundingClientRect();
+        const objectRect = object.getBoundingClientRect();
+
+        // Check for collision between player and object
+        if (
+          playerRect.left < objectRect.right &&
+          playerRect.right > objectRect.left &&
+          playerRect.top < objectRect.bottom &&
+          playerRect.bottom > objectRect.top
+        ) {
+          object.remove();
+          score++;
+          scoreDisplay.textContent = `Score: ${score}`;
+        }
       }
     }
 
-    document.addEventListener('mousemove', movePlayer);
+    requestAnimationFrame(fall);
+  }
+}
 
-    startButton.addEventListener('click', () => {
-      if (!gameRunning) {
-        gameInterval = setInterval(createObject, 1000); 
-        gameRunning = true;
-        startButton.disabled = true;
-        pauseButton.disabled = false;
-        restartButton.disabled = false;
-      }
-    });
+// Add a mousemove event listener to move the player with the mouse
+document.addEventListener('mousemove', movePlayer);
 
-    pauseButton.addEventListener('click', () => {
-      if (gameRunning) {
-        clearInterval(gameInterval);
-        gameRunning = false;
-        startButton.disabled = false;
-        pauseButton.disabled = true;
-        restartButton.disabled = false;
-      }
-    });
+// Add a click event listener to start the game
+startButton.addEventListener('click', () => {
+  if (!gameRunning) {
+    gameInterval = setInterval(createObject, 1000);
+    gameRunning = true;
+    startButton.disabled = true;
+    pauseButton.disabled = false;
+    restartButton.disabled = false;
+  }
+});
 
-    restartButton.addEventListener('click', () => {
-      clearInterval(gameInterval);
-      gameRunning = false;
-      score = 0;
-      scoreDisplay.textContent = 'Score: 0';
-      startButton.disabled = false;
-      pauseButton.disabled = true;
-      restartButton.disabled = true;
-      const objects = document.querySelectorAll('.object');
-      objects.forEach((object) => object.remove());
-    });
+// Add a click event listener to pause the game
+pauseButton.addEventListener('click', () => {
+  if (gameRunning) {
+    clearInterval(gameInterval);
+    gameRunning = false;
+    startButton.disabled = false;
+    pauseButton.disabled = true;
+    restartButton.disabled = false;
+  }
+});
+
+// Add a click event listener to restart the game
+restartButton.addEventListener('click', () => {
+  clearInterval(gameInterval);
+  gameRunning = false;
+  score = 0;
+  scoreDisplay.textContent = 'Score: 0';
+  startButton.disabled = false;
+  pauseButton.disabled = true;
+  restartButton.disabled = true;
+
+  // Remove all falling objects from the game container
+  const objects = document.querySelectorAll('.object');
+  objects.forEach((object) => object.remove());
+});
+
   </script>
 </body>
 
