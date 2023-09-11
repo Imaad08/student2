@@ -30,3 +30,11 @@ courses: { compsci: {week: 1} }
 
 ## Tutorial for the game:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/l5y0hlhtjbY" frameborder="0" allowfullscreen></iframe>
+
+<script src="https://utteranc.es/client.js"
+        repo="student2"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script> 
