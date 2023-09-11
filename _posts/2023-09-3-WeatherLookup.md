@@ -23,6 +23,7 @@ type: hacks
       padding: 20px;
       border-radius: 20px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      margin-top: 50px;
     }
     h1 {
       color: #333;
@@ -48,6 +49,7 @@ type: hacks
     button:hover {
       background-color: #0056b3;
     }
+    
   </style>
 </head>
 
@@ -60,6 +62,19 @@ type: hacks
     <div id="weather-data">
     </div>
   </div>
+  <!-- Table to display top 10 cities' weather data -->
+  <table id="top-cities-table" class="container">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>City</th>
+        <th>Weather</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Data for top 10 cities will be inserted here dynamically -->
+    </tbody>
+  </table>
 
   <script>
 // Function to fetch weather data when called
@@ -123,7 +138,60 @@ locationInput.addEventListener("keyup", function (event) {
     fetchWeather();
   }
 });
+function fetchWeatherForCity(cityName) {
+  // Construct the URL for the OpenWeatherMap API request for the specified city
+  var OpenWeatherMapAPIKey = "06ffac091aa8f9ef15e54c9209611dcd"; 
+  var URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${OpenWeatherMapAPIKey}`;
 
+  // Use the fetch API to make an HTTP request to the OpenWeatherMap API
+  return fetch(URL)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (data && data.main) {
+        return data;
+      } else {
+        throw new Error("Weather data not available for city: " + cityName);
+      }
+    })
+    .catch(error => {
+      console.error("Error fetching weather data for city:", error);
+      return null; // Return null for cities with errors
+    });
+}
+
+// Function to fetch weather data for the top cities
+function fetchWeatherForTopCities() {
+  var topCities = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "Austin"];
+
+  Promise.all(topCities.map(city => fetchWeatherForCity(city)))
+    .then(weatherDataArray => {
+      var tableBody = document.querySelector("#top-cities-table tbody");
+      tableBody.innerHTML = "";
+
+      weatherDataArray.forEach((weatherData, index) => {
+        if (weatherData) { // Check if weather data is available
+          var temperature = Math.round(((weatherData.main.temp - 273.15) * (9 / 5)) + 32).toFixed(0);
+          var row = `<tr>
+                       <td>${index + 1}</td>
+                       <td>${topCities[index]}</td>
+                       <td>${temperature}°F, ${weatherData.weather[0].description}</td>
+                     </tr>`;
+          tableBody.innerHTML += row;
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Error fetching weather data for top cities:", error);
+    });
+}
+
+// Call fetchWeatherForTopCities initially to populate the table
+fetchWeatherForTopCities();
   </script>
 
 </body>
