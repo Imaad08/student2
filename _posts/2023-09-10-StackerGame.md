@@ -53,7 +53,6 @@ type: hacks
     <button id="stopButton">Stop</button>
   </main>
   <script>
-  // Constants for block width and height
 const blockWidth = 300;
 const blockHeight = 30;
 // Variables to track game state and objects
@@ -80,8 +79,9 @@ document.getElementById("stopButton").addEventListener("click", function () {
 });
 // Function to set up the game canvas
 function setup() {
-  createCanvas(600, 600);
+  const canvas = createCanvas(600, 600);
   textAlign(CENTER, CENTER);
+  canvas.mousePressed(placeBlock); // Add mouse click event listener
   newGame();
 }
 // Function to update and draw the game elements
@@ -94,25 +94,14 @@ function draw() {
   } else if (menuState === stateLose) {
     textSize(blockHeight * 2);
     fill(255, 0, 0);
-    text("Press Space or Start", width / 2, height / 2);
+    text("Press Start", width / 2, height / 2);
     textSize(blockHeight);
   } else if (menuState === stateWin) {
     textSize(blockHeight * 2);
     fill(0, 255, 0);
     text("You Win!", width / 2, height / 2);
     textSize(blockHeight);
-    text("Press Space or Start", width / 2, height * 3 / 4);
-  }
-}
-// Function to handle key release events (spacebar)
-function keyReleased() {
-  if (key === " ") {
-    if (menuState === statePlaying) {
-      placeBlock();
-    } else {
-      newGame();
-      menuState = statePlaying;
-    }
+    text("Press Start", width / 2, height * 3 / 4);
   }
 }
 // Function to start a new game
@@ -170,6 +159,7 @@ function newBlock(newWidth) {
   }
   currentBlock = createVector(0, height - blockStackHeight, newWidth);
 }
+
 
   </script>
 </body>
