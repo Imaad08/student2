@@ -12,6 +12,23 @@ type: tangibles
 
 ---
 
+## Stock Simulator Graphs
+This is a continuation of the Stock Simulator Math where we instead now display the data on graphs.
+
+### Problems:
+> • Whenever we made the server, the images would not show but they would on VS Code.
+
+### Solutions:
+> • Me and Tanay both downloaded the inmages from VS Code and inserted them with Mardown boxes.
+
+
+### Skills used/learned:
+
+> • We learned how to use the `pandas` module and how to plot existing data
+
+
+---
+
 ## Weather Lookup description:
 I wanted to have at least one project that used an API key for something and I decided that doing a weather app would be the most convenient. Using an OpenWeatherMap API key, I was able to fetch weather data from any city that was inputted and display the results
 
@@ -77,6 +94,40 @@ I watned to create a GUI based 2D JavaScript game and I decided that a 2D Cube t
 
 ---
 
+## Linux Script
+Since creating Linux interaction is VS Code was on the pair showcase rubric I decided to create a simple file management script that allows the user to quickly move, copy, delete, or organize their files
+
+### Problems:
+> • I had to look at several different websites to see how scripts in Linux work
+
+### Solutions:
+> • After looking at sources I understood how they worked and was able to make a fairly simple script that just did 1 of 4 operations based on user input
+
+
+### Skills used/learned:
+
+> • I learned how to write Linux bash scripts
+
+---
+
+## Chat GPT Voice Assistant
+I wanted to be able to speak to an AI voice assitant and have it respond with a voice so I used my OpenAI API key to send a message to Chat GPT and return it. This was possible because of the `gTTS` module that turned my question into text that could be sent to ChatGPT and turn GPT's text response into speech.
+
+### Problems:
+> • I originally tried to use PyAudio to transcribe and speak the text but PyAudio was not working as I could not install it
+
+### Solutions:
+> • I switched to `gTTS` to transcribe the input and speak the response
+
+
+### Skills used/learned:
+
+> • I learned how to use the `gTTS` module to turn my speech into text for GPT and turn its response into speech
+>
+> • I learned how to use my OpenAI `API Key` to use AI in Python code
+
+---
+
 ## Stacker
 I wanted to create one of those arcade stacker games but didn't know where to start so I did some research and found a [Youtube Tutorial](https://www.youtube.com/watch?v=YwnbqXQSHXw){:target="_blank"} that explained how to use the P5 library to create the game. I followed the tutorial step by step and made a simillar product to what is in the video. I also added a start and stop button.
 
@@ -91,18 +142,3 @@ I wanted to create one of those arcade stacker games but didn't know where to st
 
 > • I learned what P5 js library is and how to use it to make creative games
 
----
-
-## Linux Script
-Since creating Linux interaction is VS Code was on the pair showcase rubric I decided to create a simple file management script that allows the user to quickly move, copy, delete, or organize their files
-
-### Problems:
-> • I had to look at several different websites to see how scripts in Linux work
-
-### Solutions:
-> • After looking at sources I understood how they worked and was able to make a fairly simple script that just did 1 of 4 operations based on user input
-
-
-### Skills used/learned:
-
-> • I learned how to write Linux bash scripts
