@@ -4,19 +4,18 @@ comments: false
 layout: post
 title: Linux Script
 description: Simple Linux script for file actions such as copying, moving, deleting, and organizing files
-courses: { compsci: {week: 3} }
+courses: { compsci: { week: 3 } }
 type: hacks
 ---
 
-``` bash
+```bash
 #!/bin/bash
-
 
 # Function to copy files/directories
 copy_files() {
     source="$1"
     destination="$2"
-    
+
     if [ -e "$source" ]; then
         cp -r "$source" "$destination"
         echo "Copied $source to $destination"
@@ -29,7 +28,7 @@ copy_files() {
 move_files() {
     source="$1"
     destination="$2"
-    
+
     if [ -e "$source" ]; then
         mv "$source" "$destination"
         echo "Moved $source to $destination"
@@ -41,7 +40,7 @@ move_files() {
 # Function to delete files/directories
 delete_files() {
     target="$1"
-    
+
     if [ -e "$target" ]; then
         rm -r "$target"
         echo "Deleted $target"
@@ -53,11 +52,11 @@ delete_files() {
 # Function to organize files into directories by file type
 organize_files() {
     source_directory="$1"
-    
+
     if [ -d "$source_directory" ]; then
         # Create directories for different file types (e.g., images, documents)
         mkdir -p "$source_directory/images" "$source_directory/documents"
-        
+
         # Move files to the appropriate directories based on their type
         find "$source_directory" -type f -exec bash -c '
             file="$0"
@@ -119,4 +118,4 @@ esac
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script> 
+</script>
