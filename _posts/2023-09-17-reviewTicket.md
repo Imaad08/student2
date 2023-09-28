@@ -5,7 +5,7 @@ layout: post
 title: Review Ticket
 description: Spotify playlist on my website
 courses: { compsci: {week: 5} }
-type: hacks
+type: tangibles
 ---
 # Week 5 Review Ticket: HTML Basics and JavaScript Fundamentals
 

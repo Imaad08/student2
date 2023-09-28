@@ -5,6 +5,7 @@ description: Web Programming Basics
 comments: True
 categories: ['5.A', 'C4.1']
 courses: {'compsci': {'week': 5}}
+permalink: /basics/home
 type: hacks
 ---
 
