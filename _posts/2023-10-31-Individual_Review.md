@@ -209,6 +209,12 @@ print(f"Time Taken: {time} seconds")
 
 # Trimester One Reflections
 
+- Throughout this trimester, I've gained valuable insights and acquired new skills, ranging from project planning to data retrieval from a backend repository through an API uses Python modules like Yahoo Finance and scikit-learn. I did this using JavaScript to fetch a response in JSON data. Some achievements include successfully establishing the connection between a frontend and backend repository using the 'fetch' command. I've also gained practical experience in HTML, JavaScript, and Python.
+
+- Moreover, I've gained a solid understanding of APIs and their functionality, which I hope will be beneficial in my future endeavors. In addition to my accomplishments, I recognize certain areas for potential growth. Specifically, I aim to enhance my frontend web design skills by leveraging HTML to create more polished website layouts. While I have a foundational understanding of web design, I am eager to delve deeper into this subject.
+
+- Furthermore, I am committed to expanding my knowledge of APIs and improving my proficiency with the 'fetch' command, as I am genuinely intrigued by the capability to retrieve data from one source and seamlessly transfer it to another. This reflection encapsulates the progress and aspirations I have for my first trimester's journey.
+
 ### Memories and Learning:
 
 <ul class = "bullet-points">
