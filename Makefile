@@ -68,7 +68,7 @@ convert: $(MARKDOWN_FILES)
 # Convert .md file, if .ipynb file is newer
 $(DESTINATION_DIRECTORY)/%_IPYNB_2_.md: _notebooks/%.ipynb
 	@echo "Converting source $< to destination $@"
-	@python -c 'import sys; from scripts.convert_notebooks import convert_single_notebook; convert_single_notebook(sys.argv[1])' "$<"
+	@python3 -c 'import sys; from scripts.convert_notebooks import convert_single_notebook; convert_single_notebook(sys.argv[1])' "$<"
 
 # Clean up project derived files, to avoid run issues stop is dependency
 clean: stop
