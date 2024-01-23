@@ -1,0 +1,20 @@
+<style>
+  .horizontal-list li a {
+    transition: color 0.3s ease-in-out; /* Add a smooth transition effect */
+  }
+
+  .horizontal-list li a:hover {
+    color: #4466E3; /* Change the color to a darker shade on hover */
+  }
+</style>
+
+<ul class="horizontal-list">
+  {% for item in include.collection %}
+    <li>
+      <a href="{{ item.url }}">
+        {{ item.title }}
+      </a>
+      &nbsp;&nbsp;
+    </li>
+  {% endfor %}
+</ul>
