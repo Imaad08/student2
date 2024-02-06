@@ -14,6 +14,7 @@ permalink: /data/database
     <th>Name</th>
     <th>ID</th>
     <th>Email</th>
+    <th>Role</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -31,6 +32,10 @@ permalink: /data/database
     .then(response => {
       if (response.status === 401) {
         window.location.href = '{{site.baseurl}}/login';
+        return;
+      }
+      if (response.status === 403){
+        window.location.href = '{{site.baseurl}}/403';
         return;
       }
 
@@ -52,12 +57,17 @@ permalink: /data/database
           const name = document.createElement("td");
           const id = document.createElement("td");
           const email = document.createElement("td");
+          const role = document.createElement("td");
+
           name.innerHTML = row.name; 
           id.innerHTML = row.uid; 
           email.innerHTML = row.email; 
+          role.innerHTML = row.role
+
           tr.appendChild(name);
           tr.appendChild(id);
           tr.appendChild(email);
+          tr.appendChild(role);
           resultContainer.appendChild(tr);
         }
       });
