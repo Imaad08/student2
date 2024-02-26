@@ -32,20 +32,18 @@ p { margin: 1em 0; }
 li { margin: 0.4em 0; }
 
 .w {
-  max-width: 720px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 4em 2em;
 }
 
 table, th, td {
-  width: 100%;
+  width: 1000px;
   border: thin solid black;
   border-collapse: collapse;
   padding: 1em;
 }
-td {
-  width:700px;
-}
+
 
 div.highlighter-rouge pre code, pre code.highlighter-rouge {
   display: block;
