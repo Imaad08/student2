@@ -35,3 +35,11 @@ My feature is the login page authentication with JWT cookies as well as creating
 
 ### Individual Issue:
 [Write up](https://imaad08.github.io/student2/individualreviewtri2)
+
+<script src="https://utteranc.es/client.js"
+        repo="imaad08/student2"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+</script>
